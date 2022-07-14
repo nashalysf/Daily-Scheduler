@@ -18,13 +18,39 @@ $(document).ready(function() {
 })
 
   // local storage
-    var storedAgenda = JSON.parse(localStorage.getItem("agendaSave")) || [] ;
-    console.log(storedAgenda, "storedAgenda")
-    for (var i = 0; i < storedAgenda.length; i++) {
-        var hour = storedAgenda[i].hour;
-        var textBlock = $("#text-" + hour)
-        textBlock.text(storedAgenda[i].text)
-        $("#text-" + hour).append(textBlock)
+  var storedAgenda = JSON.parse(localStorage.getItem("agendaSave")) || [] ;
+  console.log(storedAgenda, "storedAgenda")
+  for (var i = 0; i < storedAgenda.length; i++) {
+      var hour = storedAgenda[i].hour;
+      var textBlock = $("#text-" + hour)
+      textBlock.text(storedAgenda[i].text)
+      $("#text-" + hour).append(textBlock)
+  }
+
+    // current hour event available
+    for (var i = 0; i < businessHoursMil.length; i++) {
+    if (milHour == businessHoursMil[i]) {
+        var updateClass = $("." + businessHoursMil[i]);
+        updateClass.addClass("present");
+        $("." + businessHoursMil[i]).append(updateClass)
+    } 
     }
 
+    //previous hours
+    for (var i = 0; i < businessHoursMil.length; i++) {
+    if (milHour > businessHoursMil[i]) {
+        var updateClass = $("." + businessHoursMil[i]);
+        updateClass.addClass("past");
+        $("." + businessHoursMil[i]).append(updateClass)
+    }
+    }
+
+    //future hours
+    for (var i = 0; i < businessHoursMil.length; i++) {
+    if (milHour < businessHoursMil[i]) {
+        var updateClass = $("." + businessHoursMil[i]);
+        updateClass.addClass("future");
+        $("." + businessHoursMil[i]).append(updateClass)
+    }
+    }
 })
