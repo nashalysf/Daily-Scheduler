@@ -17,4 +17,14 @@ $(document).ready(function() {
     window.localStorage.setItem("agendaSave", JSON.stringify(storedAgenda))
 })
 
+  // local storage
+    var storedAgenda = JSON.parse(localStorage.getItem("agendaSave")) || [] ;
+    console.log(storedAgenda, "storedAgenda")
+    for (var i = 0; i < storedAgenda.length; i++) {
+        var hour = storedAgenda[i].hour;
+        var textBlock = $("#text-" + hour)
+        textBlock.text(storedAgenda[i].text)
+        $("#text-" + hour).append(textBlock)
+    }
+
 })
