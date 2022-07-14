@@ -3,7 +3,11 @@ body {
   font-size: 16px;
   line-height: 1;
 }
-
+.container{
+  display: flex;
+  flex-direction: column;
+  
+}
 textarea{
   background: transparent;
   border: none;
@@ -34,6 +38,8 @@ textarea{
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;;
+  border-radius: 0%;
+
 }
 
 .hour {
@@ -61,11 +67,33 @@ textarea{
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06AED5;
+  background-color: slategray;
   color: white;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+hr {
+  border: solid slategray 1px;
+}
+
+text{
+  border: transparent;
+  width: 90%;
+  overflow: hidden;
+  position: relative;
+  right: 0;
+  left: 10px;
+  background-color: #d3d3d3;
+}
+
+p.col.time-block.hour {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: none;
+  user-select: none;
 }
