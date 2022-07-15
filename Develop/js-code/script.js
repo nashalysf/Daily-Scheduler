@@ -29,28 +29,28 @@ $(document).ready(function() {
 
     // current hour event available
     for (var i = 0; i < businessHoursMil.length; i++) {
-    if (milHour == businessHoursMil[i]) {
-        var updateClass = $("." + businessHoursMil[i]);
-        updateClass.addClass("present");
-        $("." + businessHoursMil[i]).append(updateClass)
-    } 
-    }
-
-    //previous hours
-    for (var i = 0; i < businessHoursMil.length; i++) {
-    if (milHour > businessHoursMil[i]) {
-        var updateClass = $("." + businessHoursMil[i]);
-        updateClass.addClass("past");
-        $("." + businessHoursMil[i]).append(updateClass)
-    }
-    }
-
-    //future hours
-    for (var i = 0; i < businessHoursMil.length; i++) {
-    if (milHour < businessHoursMil[i]) {
-        var updateClass = $("." + businessHoursMil[i]);
-        updateClass.addClass("future");
-        $("." + businessHoursMil[i]).append(updateClass)
-    }
-    }
+        if (milHour == businessHoursMil[i]) {
+            var updateClass = $("." + businessHoursMil[i]);
+            updateClass.addClass("present");
+            $("." + businessHoursMil[i]).append(updateClass)
+        } 
+        }
+    
+        //previous hours
+        for (var i = 0; i < businessHoursMil.length; i++) {
+        if (milHour > businessHoursMil[i]) {
+            var updateClass = $("." + businessHoursMil[i]);
+            updateClass.addClass("past");
+            $("." + businessHoursMil[i]).append(updateClass)
+        }
+        }
+    
+        //future hours
+        for (var i = 0; i < businessHoursMil.length; i++) {
+        if (milHour < businessHoursMil[i]) {
+            var updateClass = $("." + businessHoursMil[i]);
+            updateClass.addClass("future");
+            $("." + businessHoursMil[i]).append(updateClass)
+        }
+        }
 })
